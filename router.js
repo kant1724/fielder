@@ -102,8 +102,8 @@ module.exports = function(app) {
 		var board_num = req.body.board_num;
 		var content = req.body.content;				
 		require('./js_server/main_server').update_gallery_info(image_path, board_num, content,
-			function callback(ret) {
-				res.status(200).send({});	
+			function callback(board_num) {
+				res.status(200).send({"board_num" : board_num});	
 			}
 		);
 	});

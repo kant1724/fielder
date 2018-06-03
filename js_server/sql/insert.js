@@ -22,11 +22,30 @@ module.exports = {
 		});		
 	},
 	update_gallery_info : function(image_path, board_num, content, callback) {		
-		conn = mysql.get_connection(); 
-		sql = "UPDATE GALLERY SET BOARD_NUM = " + board_num + ", CONTENT = '" + content + "' WHERE IMAGE_PATH = '" + image_path + "'";
-		conn.query(sql, function(err, result) {					
-			callback('');			
-		});		
+		if (board_num == "-1") {
+			conn = mysql.get_connection(); 
+			var sql = "SELECT MAX(BOARD_NUM) + 1 AS BOARD_NUM FROM BOARD";		
+			conn.query(sql, function(err, result) {
+				var board_num = 1;
+				if (result[0]['BOARD_NUM'] != null) {
+					board_num = result[0]['BOARD_NUM'];
+				}
+				sql = "INSERT INTO BOARD VALUES (" + board_num + ", CAST(DATE_FORMAT(NOW(), '%Y%m%d') AS CHAR), CAST(DATE_FORMAT(NOW(), '%H%i%s') AS CHAR), 'SSB', '', '0', '')";
+				conn.query(sql, function(err, result) {					
+					conn = mysql.get_connection(); 
+					sql = "UPDATE GALLERY SET BOARD_NUM = " + board_num + ", CONTENT = '" + content + "' WHERE IMAGE_PATH = '" + image_path + "'";
+					conn.query(sql, function(err, result) {					
+						callback(board_num);			
+					});
+				});
+			});
+		} else {
+			conn = mysql.get_connection(); 
+			sql = "UPDATE GALLERY SET BOARD_NUM = " + board_num + ", CONTENT = '" + content + "' WHERE IMAGE_PATH = '" + image_path + "'";
+			conn.query(sql, function(err, result) {					
+				callback(board_num);			
+			});
+		}
 	},
 	update_content : function(board_num, content, callback) {		
 		conn = mysql.get_connection(); 
