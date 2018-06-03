@@ -1,0 +1,41 @@
+.header {
+	position: relative;
+	height: 30px;
+}
+
+.send-btn {
+	position: relative;
+	left: 10px;
+}
+
+.outer {
+	display: inline-block;
+	position: relative;
+	width: 250px;
+    height: 300px;
+}
+
+div.gallery {
+    position: relative;
+    margin: 5px;
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+
+div.gallery img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.nopad {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.image-checkbox {
+	cursor: pointer;
+	border: 4px solid transparent;
+	margin-bottom: 0;
+}

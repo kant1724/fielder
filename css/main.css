@@ -1,0 +1,286 @@
+body {
+	margin: 0;
+	background: white;
+}
+
+.top-div {
+	position: fixed;
+	border-bottom: 1px solid #D5D5D5;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	background-color: #F6F6F6;
+	z-index: 2;
+}
+
+.ibks-logo {
+	position: relative;
+	left: 45%;
+	top: 5%;
+}
+
+.body-div {
+	position: relative;
+	padding: 16px;
+	top: 110px;
+	z-index: 1;
+}
+
+.body-div {
+	position: relative;
+}
+
+.each-div {
+	position: relative;
+	left: 200px;
+	padding-bottom: 20px;
+	max-width: 600px;
+	max-height: 1500px;
+	border: 1px solid #D5D5D5;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	background: #F6F6F6;
+	border-radius: 3px;
+}
+
+.each-image {
+	top: 15px;
+	left: 3%;
+	position: relative;
+	max-width: 90%;
+	max-height: 80%;
+}
+
+.left-first-div {
+	position: fixed;
+	left: 15px;
+	top: 140px;
+	width: 180px;
+	height: 180px;
+	background: #F6F6F6;
+	border: 1px solid #D5D5D5;
+	z-index: 2;
+	border-radius: 5px;
+}
+
+.left-second-div {
+	position: fixed;
+	left: 15px;
+	top: 340px;
+	width: 180px;
+	height: 350px;
+	background: #F6F6F6;
+	border: 1px solid #D5D5D5;
+	z-index: 2;
+	border-radius: 5px;
+}
+
+.left-second_div-title {
+	position: relative;
+	border-bottom: 1px solid #D5D5D5;
+	height: 8%;
+	background: #D5D5D5;
+}
+
+.club-list {
+	position: relative;
+	left: 30%;
+	top: 12%;
+	font-size: 0.9em;
+	font-weight: 700;
+}
+
+.right-div {
+	position: fixed;
+	left: 840px;
+	top: 140px;
+	width: 250px;
+	height: 500px;
+	background: #F6F6F6;
+	border: 1px solid #D5D5D5;
+	z-index: 2;
+	border-radius: 5px;
+}
+
+.clap-image {
+	position: relative;
+	left: 3%;
+	width: 4%;
+	height: 4%;
+}
+
+.each-msg {
+	position: relative;
+	left: 3%;
+	top: 5px;
+	font-weight: 700;
+}
+
+.border-div {
+	position: relative;
+	top: 15px;
+	left: 3%;
+	width: 93%;
+	border-bottom: 1px solid #D5D5D5;
+}
+
+.clap-image:hover {
+	cursor: pointer;	
+}
+
+.each-reply {
+	position: relative;
+	left: 18px;
+}
+
+.reply-writer {
+	position: relative;
+	font-weight: 700;	
+}
+
+.write-reply {
+	color: #8C8C8C;
+	position: relative;
+	top: 5px;
+	left: 1%;	
+}
+
+.write-reply:hover {
+	cursor: pointer;
+}
+
+.reply-msg {
+	position: relative;
+}
+
+.search-input {
+	position: relative;
+ 	left: 10%;
+ 	top: 20px;
+	width: 65%;
+}
+
+.search-image {
+	position: relative;
+	left: 11%;
+	top: 28px;
+	width: 12%;
+	height: 7%;
+}
+
+.search-image:hover {
+	cursor: pointer;	
+}
+
+.add-image {
+	position: relative;
+	left: 35%;
+	top: 34%;
+	width: 30%;
+	height: 33%;
+}
+
+.add-image:hover {
+	cursor: pointer;	
+}
+
+.user-info {
+	position: relative;
+	left: 8%;
+	top: 30px;
+	border-bottom: 1px solid #D5D5D5;
+	width: 80%;
+	margin: 2px;
+}
+
+.user-image {
+	position: relative;
+	width: 20%;
+	height: 15%;
+	border-radius: 5px;
+ 	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.user-name {
+	position: relative;
+	top: -12px;
+	left: 5%;
+	font-weight: 700;
+	font-size: 0.8em;
+}
+
+.more {
+	position: relative;
+	top: 25px;
+	left: 38%;
+	font-size: 1.5em;
+	color: gray;
+}
+
+.my-info {
+	position: relative;
+	left: 5%;
+	width: 90%;
+	height: 15%;
+	border-bottom: 1px solid #D5D5D5;
+}
+
+.my-image {
+	position: relative;
+	top: 9px;
+	width: 30%;
+    height: 70%;
+	border: 1px solid #D5D5D5;
+	border-radius: 10px;
+	background: white;
+}
+
+.my-name {
+	position: relative;
+	left: 1%;
+	top: 8px;
+	font-weight: 700;
+	font-size: 0.85em;
+	color: gray;
+}
+
+.dialog-image {
+	position: relative;
+	left: 3%;
+	top: 8px;
+	width: 25px;
+	height: 25px;
+}
+
+.my-post-text {
+	position: relative;
+	left: 5%;
+	top: 5px;
+	font-size: 0.9em;
+	
+}
+
+.reply-text-input {
+	position: relative;
+	left: 18px;
+	padding: 8px;
+	display: block;
+	border: 1px solid gray;
+	border-radius: 5px;	
+	background: #F6F6F6;
+	width: 540px;
+}
+
+.reply-text-input:focus {
+	border: 1px solid #353535;
+	outline: none; 
+}
+
+.loading-icon {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	left: 450px;
+	z-index: 3;
+}
