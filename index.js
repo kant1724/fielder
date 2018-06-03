@@ -11,6 +11,6 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-var server = app.listen(5000, function() {
+var server = app.listen(3000, function() {
 	console.log("here");
 });
