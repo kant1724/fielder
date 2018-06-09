@@ -49,6 +49,7 @@ function select_board_list_callback(data) {
 		get_reply_list(board_num);
 	}
 	$(".write-reply").unbind();
+	$(".clap-image").unbind();
 	
 	$(".clap-image").click(function() {
 		var bn = $(this).parent().parent().find('.board-num');
