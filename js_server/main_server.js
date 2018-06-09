@@ -19,6 +19,9 @@ module.exports = {
 	add_reply : function(board_num, message, rgsn_user, callback) {
 		require('./sql/insert').add_reply(board_num, message, rgsn_user, callback);
 	},
+	add_compliment : function(board_num, callback) {
+		require('./sql/insert').add_compliment(board_num, callback);
+	},
 	register_board : function(callback) {
 		require('./sql/insert').insert_board(board_num, message, rgsn_user, callback);
 	}

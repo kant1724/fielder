@@ -67,5 +67,11 @@ module.exports = {
 				callback('');
 			});
 		});
+	},
+	add_compliment : function(board_num, callback) {
+		sql = "UPDATE BOARD SET COMPLIMENT_CNT = COMPLIMENT_CNT + 1 WHERE BOARD_NUM = " + board_num;
+		conn.query(sql, function(err, result) {
+			callback(board_num);
+		});
 	}
 }

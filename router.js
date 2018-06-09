@@ -126,4 +126,13 @@ module.exports = function(app) {
 			}
 		);
 	});
+	
+	app.post('/add_compliment', urlencodedParser, function(req, res) {
+		var board_num = req.body.board_num;
+		require('./js_server/main_server').add_compliment(board_num,
+			function callback(ret) {
+				res.status(200).send(board_num);	
+			}
+		);
+	});
 }

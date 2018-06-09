@@ -12,6 +12,8 @@ function ajax(url, input_data, gubun, method) {
             	get_reply_list_callback(data);
             } else if (gubun == "add_reply") {
             	add_reply_callback(data);
+            } else if (gubun == "add_compliment") {
+            	add_compliment_callback(data);
             }
         },
         error: function (jqXhr, textStatus, errorMessage) {
@@ -47,6 +49,13 @@ function select_board_list_callback(data) {
 		get_reply_list(board_num);
 	}
 	$(".write-reply").unbind();
+	
+	$(".clap-image").click(function() {
+		var bn = $(this).parent().parent().find('.board-num');
+		var board_num = bn.prop('id');
+		add_compliment(board_num);
+	});
+	
 	$(".write-reply").click(function() {
 		var rt = $(this).parent().parent().find('.reply-text-input');
 		if (rt.prop('class') != null) {
@@ -99,9 +108,21 @@ function add_reply(board_num, message, rgsn_user) {
 	ajax('/add_reply', {"board_num" : board_num, "message" : message, "rgsn_user" : rgsn_user}, 'add_reply', 'POST');
 }
 
+function add_compliment(board_num) {
+	ajax('/add_compliment', {"board_num" : board_num}, 'add_compliment', 'POST');
+}
+
 function add_reply_callback(data) {
 	alert("답글이 등록되었습니다.");
 	ajax('/get_reply_list', {"board_num" : data}, 'get_reply_list', 'POST');	
+}
+
+function add_compliment_callback(data) {
+	alert("칭찬이 등록되었습니다.");
+	var compliment = $('#each' + data).find('.each-msg').text();
+	var num = Number(compliment.split(" ")[1].replace('개', ''));
+	num = num += 1
+	$('#each' + data).find('.each-msg').text("칭찬해 " + num + "개");
 }
 
 $(document).ready(function() {
