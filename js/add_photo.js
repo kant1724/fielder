@@ -61,7 +61,7 @@ function get_gallery_list_callback(data) {
 function register_image_callback(data) {
 	all_done--;
 	if (all_done == 0) {
-		alert("사진이 등록 되었습니다.");
+		alert("Photo is added.");
 		opener.$('.body-inner').empty();
 		opener.get_images();
 		self.close();
