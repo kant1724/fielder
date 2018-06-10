@@ -24,5 +24,8 @@ module.exports = {
 	},
 	register_board : function(callback) {
 		require('./sql/insert').insert_board(board_num, message, rgsn_user, callback);
+	},
+	login : function(user_id, password, callback) {
+		return require('./sql/select').login(user_id, password, callback);
 	}
 }
