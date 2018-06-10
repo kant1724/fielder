@@ -40,10 +40,10 @@ function select_board_list_callback(data) {
 		last_board_num = board_num;
 		$('<div id="' + board_num + '" class="board-num"></div>').appendTo($('#each' + board_num));
 		$('<p><div><img class="clap-image" src="res/clap.png" /></div>').appendTo($('#each' + board_num));
-		var msg = "칭찬해 " + ret_list[i]['COMPLIMENT_CNT'] + "개";
+		var msg = "Clap " + ret_list[i]['COMPLIMENT_CNT'];
 		$('<a class="each-msg">' + msg + '</a>').appendTo($('#each' + board_num));
 		$('<div class="border-div" />').appendTo($('#each' + board_num));
-		var write_reply = "&nbsp;&nbsp;답글달기";
+		var write_reply = "&nbsp;&nbsp;Add reply";
 		$('<p><a id="reply' + i + '" class="write-reply">' + write_reply + '</a>').appendTo($('#each' + board_num));
 		$('<div class="reply-text"></div>').appendTo($('#each' + board_num));
 		get_reply_list(board_num);
@@ -70,7 +70,7 @@ function select_board_list_callback(data) {
 			$(rt).keypress(function(event) {
 				if (event.which == 13) {
 					var message = $(this).val();
-					add_reply(board_num , message, "SSB");
+					add_reply(board_num , message, "Guest");
 					rt.remove();
 				}
 			});
@@ -114,28 +114,28 @@ function add_compliment(board_num) {
 }
 
 function add_reply_callback(data) {
-	alert("답글이 등록되었습니다.");
+	alert("your reply is added.");
 	ajax('/get_reply_list', {"board_num" : data}, 'get_reply_list', 'POST');	
 }
 
 function add_compliment_callback(data) {
-	alert("칭찬이 등록되었습니다.");
-	var compliment = $('#each' + data).find('.each-msg').text();
-	var num = Number(compliment.split(" ")[1].replace('개', ''));
+	alert("compliment is done.");
+	var clap = $('#each' + data).find('.each-msg').text();
+	var num = Number(clap.split(" ")[1]);
 	num = num += 1
-	$('#each' + data).find('.each-msg').text("칭찬해 " + num + "개");
+	$('#each' + data).find('.each-msg').text("Clap " + num);
 }
 
 $(document).ready(function() {
 	$('.body-inner').empty();
 	$('img').lazyload({event: "lazyload", effect : 'fadeIn', effectTime : 1000}).trigger("lazyload");
 	get_images();
-	var user_arr = ['이시현', '김민정', '류석호', '김진욱', '손승범'];
+	var user_arr = ['Lee Si Hyun', 'Kim Min Jeong', 'Ryu Seok Ho', 'Kim Jin Wook', 'Son Seung Bum'];
 	for (var i = 0; i < 5; ++i) {
 		$('<div class="user-info"><img class="user-image" src="res/user' + (i + 1) + '.jpg" /><a class="user-name">' + user_arr[i] + '</a></div>').appendTo($('.left-second-div-content'));
 	}
 	$('<div class="more"><a>. . .</a></div>').appendTo($('.left-second-div-content'));
-	$('<a class="my-post-text">타임라인</a>').appendTo($('.my-post'));
+	$('<a class="my-post-text">Timeline</a>').appendTo($('.my-post'));
 	
 	$(".add-image").click(function() {
 		var w = 1000;
