@@ -38,5 +38,15 @@ module.exports = {
 			}
 			callback(ret);
 		});
+	},
+	login : function(user_id, password, callback) {
+		conn = mysql.get_connection();
+		var ret = [];
+		conn.query("SELECT USER_ID FROM USER_INFO WHERE USER_ID = '" + user_id + "' AND PASSWORD = '" + password + "'", function(err, result) {
+			for (var i = 0; i < result.length; ++i) {
+				ret.push(result[i]);				
+			}
+			callback(ret);
+		});
 	}
 }

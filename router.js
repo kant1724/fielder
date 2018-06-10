@@ -135,4 +135,20 @@ module.exports = function(app) {
 			}
 		);
 	});
+	
+	app.post('/login', urlencodedParser, function(req, res) {
+		var user_id = req.body.user_id;
+		var password = req.body.password;
+		console.log(user_id);
+		console.log(password);
+		require('./js_server/main_server').login(user_id, password,
+			function callback(ret) {
+				var success_yn = 'N'				
+				if (ret.length > 0) {
+					success_yn = 'Y' 
+				}
+				res.status(200).send({"success_yn" : success_yn});
+			}
+		);
+	});
 }
